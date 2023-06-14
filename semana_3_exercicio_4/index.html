@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exercicio 4</title>
+</head>
+
+<body>
+    
+    <div class="container">
+        <header>Formulário de Cadastro</header>
+        <p class="subtitulo">Preencha os Dados</p>
+        <form class="formulario" action="">
+            <label>
+                <p>Nome:</p>
+                <input type="text" name="nome">
+            </label>
+            <label>
+                <p>Data de Nascimento:</p>
+                <input type="date" name="data_nascimento" placeholder="dd/mm/aaaa">
+            </label>
+            <label>
+                <p>CPF:</p>
+                <input type="txt" name="cpf">
+            </label>
+            <label>
+                <p>Municipio:</p>
+                <Select name="selecionar_cidade">
+                    <option value="fortaleza">Fortaleza</option>
+                    <option value="recife">Recife</option>
+                    <option value="natal">Natal</option>
+                    <option value="terezina">Terezina</option>
+                </Select>
+            </label>
+        </form>
+    </div>
+</body>
+
+
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+    }
+
+    .container {
+        border-radius: 10px;
+        background-color: brown;
+        width: 400px;
+        height: 400px;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        margin: -200px 0 0 -200px
+    }
+
+    .container header {
+        color: white;
+        font-weight: bold;
+        font-size: 30px;
+        font-family: sans-serif;
+        text-align: center;
+        padding: 20px;
+    }
+
+    .subtitulo {
+        text-align: center;
+        color: white;
+        font-weight: bold;
+        font-size: 20px;
+        font-family: sans-serif;
+        margin-top: -10px;
+         
+    }
+
+    form {
+        display: flex;
+        flex-direction: column;
+        padding: 30px;
+        margin-top: -20px;
+    }
+
+    form label {
+        display: flex;
+        justify-content: center;
+        flex-direction: column;
+        margin-bottom: 10px;
+    }
+
+    form label p {
+        color: white;
+        text-align: left;
+        font-family: sans-serif;
+        font-weight: bold;
+        font-size: 15px;
+        margin-bottom: 3px;
+    }
+
+    form input {
+        outline: unset;
+        width: 320px;
+        height: 25px;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding-left: 10px;  
+        padding-right: 10px; 
+        
+    }
+
+    form select {
+        outline: unset;
+        width: 342px;
+        height: 27px;
+        border: 1px solid white;
+        border-radius: 5px;
+        padding-left: 10px;   
+    }
+    
+</style>
+
+
+</html>
