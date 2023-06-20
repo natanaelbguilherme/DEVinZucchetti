@@ -1,4 +1,3 @@
-
 var peso = document.querySelector('.pesoProduto')
 var distancia = document.querySelector('.distancia')
 var botao = document.querySelector('.botao')
@@ -57,4 +56,4 @@ function reset(){
 
 
 
-// console.log("O custo total é " + custoFrete + ' reais')
+

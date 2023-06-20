@@ -9,7 +9,8 @@
 </head>
 <body>
     <div class="main">
-        <h1>Lanchonete online</h1>
+        <div class="container">
+            <h1>Lanchonete online</h1>
 
         <table class="tabela">
             <tr>
@@ -19,32 +20,34 @@
             </tr>
             <tr>
                 <td>1123</td>
-                <td>hamburger</td>
+                <td>Hamburger</td>
                 <td>12,00</td>
             </tr>
             <tr>
                 <td>3423</td>
-                <td>sanduiche pernil</td>
+                <td>Sanduiche de Pernil</td>
                 <td>9,00</td>
             </tr>
             <tr>
                 <td>4521</td>
-                <td>bauru</td>
+                <td>Bauru</td>
                 <td>15,00</td>
             </tr>
             <tr>
                 <td>5322</td>
-                <td>sanduiche mortadela</td>
+                <td>Sanduiche de Mortadela</td>
                 <td>34,99</td>
             </tr>
         </table>
 
-        <input type="number" class="codigo">
-        <input type="number" class="quantidade">
+        <input placeholder="Código do Pedido" type="number" class="codigo">
+        <input placeholder="Quantidade" type="number" class="quantidade">
 
         <button class="fazerPedido">Fazer Pedido</button>
+        <button style="display: none;" class="novoPedido">Fazer Outro Pedido</button>
 
-        <h2>1 sanduiche custa xxxx</h2>
+        </div>
+        
     </div>
 
     <script type="text/javascript" src="./lanchonete.js"></script>
