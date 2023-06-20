@@ -35,6 +35,11 @@ body {
   font-size: 40px;
 }
 
+.main h2 {
+  font-size: 25px;
+  margin-top: 40px;
+}
+
 .main input {
   width: 200px;
   height: 40px;
@@ -49,10 +54,6 @@ body {
   color: #ccc;
 }
 
-.main img {
-  width: 100px;
- 
-}
 
 .botao {
   width: 100px;

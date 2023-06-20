@@ -11,17 +11,14 @@
 <body>
   <div class="main">
     <div class="calculoDoFrete">
-      <h1>Calculo de frete</h1>
+      <h1>Calcular Frete</h1>
       <img src="" alt="">
         <input type="number" class="pesoProduto" placeholder="Peso do Produto" >
         <input type="number" class="distancia" placeholder="Distacia do trajeto" >
         <button class="botao">Calcular</button>
+        <button style="display: none;" class="resetaFormulario" onclick="reset()">Calcular Novamente</button>
     </div>
-    <div class="mostraOFrete"> 
-      <h1>Valor do Frete</h1>
-      <h2>O Valor do frete é <span>R$ 0,00</span></h2>
-      <button class="resetaFormulario" onclick="reset()">Calcular Novamente</button>
-    </div>
+    
   </div>
 
   <script type="text/javascript" src="./calculoFrete.js"></script>
