@@ -1,5 +1,3 @@
-// var pesoProduto = Number(prompt("Digite o peso do produto"))
-// var distancia = Number(prompt("Digite a distância do trajeto"))
 
 var peso = document.querySelector('.pesoProduto')
 var distancia = document.querySelector('.distancia')
