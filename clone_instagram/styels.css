@@ -1,0 +1,46 @@
+.formulario {
+    width: 40%;
+    margin: 0 auto;
+    border: 1px solid #999;
+    border-radius: 8px;
+    max-width: 400px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+}
+
+img {
+    width: 200px;
+}
+
+input {
+    height: 44px;
+    width: 70%;
+    border-radius: 8px;
+    border: 1px solid #999;
+    outline: none; 
+    box-sizing: border-box;
+    padding-left: 10px;
+}
+
+button {
+    height: 35px;
+    width: 70%;
+    background-color: rgb(66, 66, 235);
+    color: white;
+    border-radius: 8px;
+    border: 1px solid rgb(66, 66, 235);
+    outline: none;
+    font-size: 15px;
+}
+
+button:hover {
+    background-color: rgb(49, 49, 253);
+    border: 1px solid rgb(49, 49, 253);
+}
+
+a {
+    margin-bottom: 20px;
+    text-decoration: none;
+}
