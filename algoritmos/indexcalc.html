@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <link rel="stylesheet"
+    href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+
+  <style>
+    @import url('https://fonts.googleapis.com/css?family=Pacifico&display=swap');
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background-color: darkgrey;
+    }
+
+    h1 {
+      font-family: 'Pacifico', cursive;
+      font-size: 2.5em;
+      font-weight: normal;
+      text-align: center;
+    }
+
+    form {
+      margin: auto;
+      display: flex;
+      justify-content: center;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
+      width: 400px;
+      background-color: white;
+      border: 1px solid black;
+      border-radius: 5px;
+      padding-top: 20px;
+      padding-bottom: 20px;
+    }
+
+  
+
+    .error {
+      border: 1px solid red;
+    }
+
+    .valor {
+      padding: 10px;
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.601);
+    }
+
+    #opcoes {
+      padding: 10px;
+      width: 192px;
+      border-radius: 5px;
+    }
+
+    button {
+      display: flex;
+      align-items: center;
+      justify-content: space-evenly;
+      padding: 5px;
+      background-color: rgb(110, 110, 110);
+      border-radius: 5px;
+      border: 1px solid rgba(0, 0, 0, 0.294);
+      color: white;
+    }
+  </style>
+
+</head>
+
+<body>
+  <h1>Calculadora</h1>
+  <form class="formulario">
+    <label id="valorUm" for="primeiroValor">Qual o primeiro valor?</label>
+    <input type="number" name="primeiroValor" class="valor error" id="primeiroValor" placeholder="Primeiro Valor">
+    <label id="valorDois" for="segundoValor">Qual o segundo valor?</label>
+    <input type="number" name="segundoValor" class="valor" id="segundoValor" placeholder="Segundo Valor">
+    <label for="opcoes">Qual operação?</label>
+    <select name="opcoes" id="opcoes">
+      <option value="adicao" id="adicao">Adição</option>
+      <option value="subtracao" id="subtracao">Subtração</option>
+      <option value="multiplicacao" id="multiplicacao">Multiplicação</option>
+      <option value="divisao" id="divisao">Divisão</option>
+    </select>
+    <button type="button" onclick="calcular()" id="resposta" style="display: '';">Calcular</button>
+    <button type="button" onclick="resetaFormulario()" id="calculo" style="display: none;"></button>
+  </form>
+  <script>
+
+    function resetaFormulario() {
+      document.getElementById('primeiroValor').value = ''
+      document.getElementById('segundoValor').value = ''
+      document.getElementById('resposta').style.display = ""
+      document.getElementById('calculo').style.display = "none"
+    }
+
+
+
+    function calcular() {
+      var select = document.getElementById('opcoes')
+      var operacao = select.options[select.selectedIndex].value
+
+      var valor1 = parseFloat(document.getElementById('primeiroValor').value)
+      var valor2 = parseFloat(document.getElementById('segundoValor').value)
+      var resultado = document.getElementById('resposta')
+      var calculo = document.getElementById('calculo')
+
+      function mostratCalculo() {
+        document.getElementById('resposta').style.display = "none"
+        document.getElementById('calculo').style.display = ""
+
+        document.getElementById('primeiroValor').style.border = ""
+        document.getElementById('valorUm').innerText = "Qual o primeiro valor?"
+        document.getElementById('segundoValor').style.border = ""
+        document.getElementById('valorDois').innerText = "Qual o Segundo valor?"
+      }
+
+      if (!valor1) {
+        document.getElementById('primeiroValor').style.border = "1px solid red"
+        document.getElementById('valorUm').innerText = "Campo Obrigatorio"
+      } else if(!valor2){
+        document.getElementById('segundoValor').style.border = "1px solid red"
+        document.getElementById('valorDois').innerText = "Campo Obrigatorio"
+      } else if (operacao === "adicao") {
+        calculo.innerText = (`${valor1} + ${valor2} = ${valor1 += valor2}`)
+        mostratCalculo()
+      } else if (operacao === "subtracao") {
+        calculo.innerText = (`${valor1} - ${valor2} = ${valor1 -= valor2}`)
+        mostratCalculo()
+      } else if (operacao === "multiplicacao") {
+        calculo.innerText = (`${valor1} x ${valor2} = ${valor1 *= valor2}`)
+        mostratCalculo()
+      } else if (operacao === "divisao") {
+        calculo.innerText = (`${valor1} / ${valor2} = ${valor1 /= valor2}`)
+        mostratCalculo()
+      }
+    }
+  </script>
+</body>
+
+</html>
