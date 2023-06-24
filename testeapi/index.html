@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <div class="main">
+        <label>
+            <h3>titulo</h3>
+            <input id="titulo" type="text">
+        </label>
+        <label for="">
+            <h3>conteudo</h3>
+            <textarea id="conteudo" name="" id="" cols="30" rows="10"></textarea>
+        </label>
+        <button id="botao">postar</button>
+    </div>
+    <div id="posts">
+        posts
+    </div>
+
+    <script>
+        // https://jsonplaceholder.typicode.com/posts
+
+        let titulo = document.getElementById('titulo').value
+        let conteudo = document.getElementById('conteudo').value
+        let botao = document.getElementById('botao')
+
+        async function readPosts() {
+            let posts = document.getElementById('posts')
+            posts.innerHTML = "carregando"
+
+            let response = await fetch('https://jsonplaceholder.typicode.com/posts')
+            let json = await response.json()
+
+            if (json.length > 0) {
+                posts.innerHTML = ""
+
+                json.forEach(item => {
+                    let postHtml = `<div><h1>${item.title}</h1>${item.body}<hr/></div>`
+                    posts.innerHTML += postHtml
+                });
+            } else {
+                posts.innerHTML = "se posts pra exibir"
+
+            }
+
+        }
+
+        async function newPost(title, body) {
+            await fetch(
+                'https://jsonplaceholder.typicode.com/posts',
+                {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json'
+                    },
+                    body: JSON.stringify({
+                        titulo,
+                        body,
+                        userId: 2
+                    })
+                })
+                
+        }
+
+        function postar() {
+            let titulo = document.getElementById('titulo').value
+            let conteudo = document.getElementById('conteudo').value
+            let botao = document.getElementById('botao')
+
+            if (title && body) {
+                newPost(titulo, body)
+            } else {
+                alert('preencha os campos')
+            }
+        }
+
+        document.getElementById('botao').addEventListener('click', postar)
+
+        readPosts()
+
+    </script>
+</body>
+
+</html>
