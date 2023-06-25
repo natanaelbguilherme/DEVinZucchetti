@@ -17,7 +17,7 @@
             <h3>conteudo</h3>
             <textarea id="conteudo" name="" id="" cols="30" rows="10"></textarea>
         </label>
-        <button id="botao">postar</button>
+        <button type="button" id="botao">postar</button>
     </div>
     <div id="posts">
         posts
@@ -60,12 +60,12 @@
                         'Content-Type': 'application/json'
                     },
                     body: JSON.stringify({
-                        titulo,
+                        title,
                         body,
                         userId: 2
                     })
                 })
-                
+
         }
 
         function postar() {
@@ -73,8 +73,8 @@
             let conteudo = document.getElementById('conteudo').value
             let botao = document.getElementById('botao')
 
-            if (title && body) {
-                newPost(titulo, body)
+            if (titulo && conteudo) {
+                newPost(titulo, conteudo)
             } else {
                 alert('preencha os campos')
             }

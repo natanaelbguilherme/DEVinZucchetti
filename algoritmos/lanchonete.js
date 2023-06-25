@@ -62,7 +62,7 @@ function calcularPreco() {
     formataPreco() 
     ocultaForm()
   } else {
-    alert("Codigo Invalido")
+    alert("Preencha os campos")
   }
 
 }
